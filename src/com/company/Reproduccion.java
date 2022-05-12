@@ -5,7 +5,4 @@ public interface Reproduccion {
     void agregarCancion(Cancion c);
     void eliminarCancion();
     void verMiLista();
-    default void hacee(){
-        System.out.println("ieieie");
-    }
 }

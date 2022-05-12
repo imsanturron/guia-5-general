@@ -4,11 +4,11 @@ import java.util.Stack;
 
 public class ListaBasica implements Reproduccion {
     private String nombre;
-    private final Stack<Cancion> miLista = new Stack<>(); ///asi stack?   xq tiral em may be final
-    //private Stack<Cancion> Stackaux = new Stack<>();
-    //private List<Cancion> miLista = new Stack<>();
+    private final Stack<Cancion> miLista = new Stack<>();
+    private final Stack<Cancion> miListaaux = new Stack<>();
 
-    public ListaBasica(String nombre){
+
+    public ListaBasica(String nombre) {
         this.nombre = nombre;
     }
 
@@ -19,24 +19,32 @@ public class ListaBasica implements Reproduccion {
                     + "genero: " + miLista.peek().genero + "artista: " + miLista.peek().albumx.artistax.nombre);
             if (miLista.peek().artistaInvitado != null)
                 System.out.println("artista invitado: " + miLista.peek().artistaInvitado);
-        }
-        ///y enviar al final
+
+            Cancion auxi = miLista.pop();
+            while (!miLista.empty())
+                miListaaux.push(miLista.pop());
+
+            miListaaux.push(auxi);
+
+            while (!miListaaux.empty())
+                miLista.push(miListaaux.pop());
+        } else
+            System.out.println("toavia no tiene canciones. Añadalas!");
     }
 
     @Override
     public void agregarCancion(Cancion c) {
         miLista.push(c);
     }
-    ///no way
-    ///no way2
-    ///no way3
 
     @Override
     public void verMiLista() {
-        int i = miLista.size();
-        while (i > 0) {
-            System.out.println(miLista.size());//eso no es nada/como hago, stack aux o que??
+        while (!miLista.empty()) {
+            System.out.println("cancion: " + miLista.peek().nombre);
+            miListaaux.push(miLista.pop());
         }
+        while (!miListaaux.empty())
+            miLista.push(miListaaux.pop());
     }
 
     public void cambiarCancion() {
