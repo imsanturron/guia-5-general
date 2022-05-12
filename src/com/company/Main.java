@@ -49,7 +49,7 @@ public class Main {
 
         int i;
         do {
-            System.out.println("Hola! Bienvenido a tu lista de reproduccion, usted desea:" +
+            System.out.println("Hola! Bienvenido a tu lista de reproduccion BASICA\nusted desea: " +
                     "0:Salir    1:Reproducir cancion   2:Añadir cancion    3:Elminar cancion   4:Cambiar cancion    5:Ver lista");
             i = scan.nextInt();
             scan.nextLine();
@@ -60,6 +60,22 @@ public class Main {
                 case 3 -> basica.eliminarCancion();
                 case 4 -> basica.cambiarCancion();
                 case 5 -> basica.verMiLista();
+                default -> System.out.println("error!");
+            }
+        } while (i != 0);
+
+        do {
+            System.out.println("Hola! Bienvenido a tu lista de reproduccion PREMIUM!\nusted desea: " +
+                    "0:Salir    1:Reproducir cancion   2:Añadir cancion    3:Elminar cancion   4:Cambiar cancion    5:Ver lista");
+            i = scan.nextInt();
+            scan.nextLine();
+            switch (i) {
+                case 0 -> System.out.println("Hasta pronto!");
+                case 1 -> premium.reproducir();
+                case 2 -> premium.agregarCancion(cancion2);
+                case 3 -> premium.eliminarCancion();
+                case 4 -> premium.cambiarCancion();
+                case 5 -> premium.verMiLista();
                 default -> System.out.println("error!");
             }
         } while (i != 0);

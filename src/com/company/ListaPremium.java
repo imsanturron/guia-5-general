@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class ListaPremium implements Reproduccion {
     private Scanner scan = new Scanner(System.in);
     private String nombre;
-    private LinkedList<Cancion> miLista = new LinkedList<>();///xq el final?
+    private final LinkedList<Cancion> miLista = new LinkedList<>();///xq el final?
 
     public ListaPremium(String nombre) {
         this.nombre = nombre;
