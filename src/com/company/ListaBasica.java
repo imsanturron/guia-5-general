@@ -27,6 +27,7 @@ public class ListaBasica implements Reproduccion {
     public void agregarCancion(Cancion c) {
         miLista.push(c);
     }
+    ///no way
 
     @Override
     public void verMiLista() {
