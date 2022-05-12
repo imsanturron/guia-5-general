@@ -28,6 +28,7 @@ public class ListaBasica implements Reproduccion {
         miLista.push(c);
     }
     ///no way
+    ///no way2
 
     @Override
     public void verMiLista() {
